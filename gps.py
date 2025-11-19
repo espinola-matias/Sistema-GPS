@@ -23,3 +23,12 @@ def movimientos_validos(posicion_entrada, edificio, agua, posicion_obstaculo_opc
     fila_entrada, columna_entrada = posicion_entrada
     movimientos_validos = []
     direcciones = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+    for direccion in direcciones:
+        nueva_fila = fila_entrada + direccion[0]
+        nueva_columna = columna_entrada + direccion[1]
+        if 0 <= nueva_fila < dimension and 0 <= nueva_columna < dimension:
+            if ciudad[nueva_fila][nueva_columna] != edificio and ciudad[nueva_fila][nueva_columna] != agua:
+                if(nueva_fila, nueva_columna) not in posicion_obstaculo_opcional:
+                    movimientos_validos.append((nueva_fila, nueva_columna))
+    return movimientos_validos
