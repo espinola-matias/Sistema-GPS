@@ -68,3 +68,16 @@ def mostrar_camino(ciudad, camino, entrada, salida, inicio, destino, ruta):
 
         for fila in ciudad_con_camino:
             print(" ".join(fila))
+
+# configuracion inicial de los parametros del gps 
+def inicio_gps():
+
+    inicio = "✅"
+    destino = "❌"
+    ruta = "◾"
+    camino = "⬜"
+    edificio = "🏨"
+    agua = "♒"
+    caracter_obstaculo = "🧱"
+    porcentaje_agua = 4
+    dimension_min = 5
