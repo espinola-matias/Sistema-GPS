@@ -171,5 +171,16 @@ def inicio_gps():
                 else:
                     obstaculo_opcional.append(obstaculo_agregado)
                     print(f"Agregaste un obstaculo temporal en la posicion {fila_obstaculo, columna_obstaculo}")
+
+                    mapa_ciudad[fila_obstaculo][columna_obstaculo] = caracter_obstaculo
+                    camino = encontrar_camino(entrada, salida, edificio, agua, obstaculo_opcional, dimension, mapa_ciudad)
+                    if camino:
+                        print("\n-- ¡Encontramos el camino! --")
+                        mostrar_camino(mapa_ciudad, camino, entrada, salida, inicio, destino, ruta)
+                    else:
+                        print("\n-- ¡No se pudo llegar al punto, las calles estan bloqueadas! --")
+                        for fila in mapa_ciudad:
+                            print(" ".join(fila))
+                        break
         except ValueError:
             print("Favor solo ingrese numeros")
