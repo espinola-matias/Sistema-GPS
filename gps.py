@@ -81,3 +81,17 @@ def inicio_gps():
     caracter_obstaculo = "🧱"
     porcentaje_agua = 4
     dimension_min = 5
+
+    print("-- ¡Bienvenido a la ciudad! --")
+    while True:
+        try:
+            dimension = int(input(f"*Dime el tamaño de la ciudad. OBS('El tamaño debe ser mayor a {dimension_min}!'): "))
+            if dimension <= dimension_min:
+                print(f"El valor debe ser mayor a {dimension_min}, ajustamos a un valor por defecto!")
+                dimension = dimension_min
+            break
+        except ValueError:
+            print("Favor solo ingresar numeros!")
+
+    mapa_ciudad = crear_ciudad(dimension, edificio, agua, porcentaje_agua, camino)
+    print("\n--- Configuremos tu destino ---")
