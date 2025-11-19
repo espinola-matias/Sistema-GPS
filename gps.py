@@ -18,3 +18,8 @@ def crear_ciudad(dimension, caracter_edificio, caracter_agua, porcentaje, camino
         print(' '.join(fila))
     
     return matriz
+
+def movimientos_validos(posicion_entrada, edificio, agua, posicion_obstaculo_opcional, dimension, ciudad):
+    fila_entrada, columna_entrada = posicion_entrada
+    movimientos_validos = []
+    direcciones = [(-1, 0), (1, 0), (0, -1), (0, 1)]
