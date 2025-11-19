@@ -182,5 +182,10 @@ def inicio_gps():
                         for fila in mapa_ciudad:
                             print(" ".join(fila))
                         break
+
+            elif obstaculo == 2:
+                break
+            else:
+                print("Opcion no valida favor lea las opciones e ingrese el numero")
         except ValueError:
             print("Favor solo ingrese numeros")
