@@ -95,3 +95,12 @@ def inicio_gps():
 
     mapa_ciudad = crear_ciudad(dimension, edificio, agua, porcentaje_agua, camino)
     print("\n--- Configuremos tu destino ---")
+
+    while True:
+        try:    
+            fila_entrada = int(input("Dime la fila del punto de partida: "))
+            columna_entrada = int(input("Dime la columna del punto de partida: "))
+            entrada = (fila_entrada, columna_entrada)
+
+        except ValueError:
+            print("Favor solo ingrese numeros")
