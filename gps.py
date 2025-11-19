@@ -189,3 +189,6 @@ def inicio_gps():
                 print("Opcion no valida favor lea las opciones e ingrese el numero")
         except ValueError:
             print("Favor solo ingrese numeros")
+
+if __name__ == "__main__":
+    inicio_gps()
