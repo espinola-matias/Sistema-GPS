@@ -32,3 +32,10 @@ def movimientos_validos(posicion_entrada, edificio, agua, posicion_obstaculo_opc
                 if(nueva_fila, nueva_columna) not in posicion_obstaculo_opcional:
                     movimientos_validos.append((nueva_fila, nueva_columna))
     return movimientos_validos
+
+def encontrar_camino(entrada, salida, posicion_edificio, posicion_agua, posicion_obstaculo_opcional, dimension, ciudad):
+    if entrada == salida:
+        return [entrada]
+    
+    cola = deque([(entrada, [entrada])])
+    visitados = {entrada}
