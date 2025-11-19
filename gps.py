@@ -113,3 +113,12 @@ def inicio_gps():
                 break
         except ValueError:
             print("Favor solo ingrese numeros")
+
+    while True:
+        try:    
+            fila_salida = int(input("Dime la fila del punto de llegada: "))
+            columna_salida = int(input("Dime la columna del punto de llegada: "))
+            salida = (fila_salida, columna_salida)
+
+        except ValueError:
+            print("Favor solo ingrese numeros")
