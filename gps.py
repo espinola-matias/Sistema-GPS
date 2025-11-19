@@ -1,2 +1,9 @@
 from collections import deque
 import random
+
+def crear_ciudad(dimension, caracter_edificio, caracter_agua, porcentaje, camino):
+    matriz = [[camino for _ in range(dimension)] for _ in range(dimension)]
+
+    for fila in range(0, dimension, 2):
+        for columna in range(0, dimension, 2):
+            matriz[fila][columna] = caracter_edificio
