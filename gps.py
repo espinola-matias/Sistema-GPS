@@ -140,3 +140,12 @@ def inicio_gps():
 
     obstaculo_opcional = []
     camino = encontrar_camino(entrada, salida, edificio, agua, obstaculo_opcional, dimension, mapa_ciudad)
+
+    if camino:
+        print("\n-- ¡Encontramos el camino! --")
+        mostrar_camino(mapa_ciudad, camino, entrada, salida, inicio, destino, ruta)
+    else:
+        print("\nNo se pudo llegar al punto, las calles estan bloqueadas!")
+        for fila in mapa_ciudad:
+            print(" ".join(fila))
+        return
