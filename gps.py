@@ -153,6 +153,9 @@ def inicio_gps():
     while True:
         try:
             obstaculo = int(input("\nIngrese el numero de la opcion que desea 1- Quiero ingresar un obstaculo 2- No deseo agregar nada(Salir): "))
-
+            if obstaculo == 1:
+                fila_obstaculo = int(input("Dime la fila del obstaculo: "))
+                columna_obstaculo = int(input("Dime la columna del obstaculo: "))
+                obstaculo_agregado = (fila_obstaculo, columna_obstaculo)
         except ValueError:
             print("Favor solo ingrese numeros")
