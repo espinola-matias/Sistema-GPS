@@ -149,3 +149,10 @@ def inicio_gps():
         for fila in mapa_ciudad:
             print(" ".join(fila))
         return
+    
+    while True:
+        try:
+            obstaculo = int(input("\nIngrese el numero de la opcion que desea 1- Quiero ingresar un obstaculo 2- No deseo agregar nada(Salir): "))
+
+        except ValueError:
+            print("Favor solo ingrese numeros")
