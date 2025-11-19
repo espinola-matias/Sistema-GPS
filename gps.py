@@ -164,5 +164,12 @@ def inicio_gps():
                     print(f"No se puede agregar obstaculo ya que esta en el punto de Partida/Llegada ({fila_obstaculo, columna_obstaculo})")
                 elif mapa_ciudad[fila_obstaculo][columna_obstaculo] == edificio:
                     print(f"No se puede agregar aqui ya que es un Edificio {fila_obstaculo, columna_obstaculo}")
+                elif mapa_ciudad[fila_obstaculo][columna_obstaculo] == agua:
+                    print(f"No se puede agregar aqui ya que es un Rio {fila_obstaculo, columna_obstaculo}")
+                elif obstaculo_agregado in obstaculo_opcional:
+                    print(f"Aqui ya agregaste un obstaculo!!{fila_obstaculo, columna_obstaculo}")
+                else:
+                    obstaculo_opcional.append(obstaculo_agregado)
+                    print(f"Agregaste un obstaculo temporal en la posicion {fila_obstaculo, columna_obstaculo}")
         except ValueError:
             print("Favor solo ingrese numeros")
