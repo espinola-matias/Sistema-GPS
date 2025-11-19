@@ -120,5 +120,17 @@ def inicio_gps():
             columna_salida = int(input("Dime la columna del punto de llegada: "))
             salida = (fila_salida, columna_salida)
 
+            if not (0 <= fila_salida < dimension and 0 <= columna_salida < dimension):
+                print(f"Este punto esta fuera de los limites de la ciudad {fila_salida, columna_salida}")
+            elif mapa_ciudad[fila_salida][columna_salida] == edificio:
+                print(f"Aqui no puede colocar, hay un edificio {fila_salida, columna_salida}")
+            elif mapa_ciudad[fila_salida][columna_salida] == agua:
+                print(f"Aqui no puedes colocar, hay un rio {fila_salida, columna_salida}")
+            elif salida == entrada:
+                print(f"Estas colocando en el mismo punto de inicio {fila_salida, columna_salida}")
+            else:
+                print(f"Colocaste la salida en {fila_salida, columna_salida}")
+                break
+
         except ValueError:
             print("Favor solo ingrese numeros")
