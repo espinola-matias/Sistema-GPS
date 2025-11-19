@@ -54,3 +54,14 @@ def encontrar_camino(entrada, salida, posicion_edificio, posicion_agua, posicion
                 cola.append((vecino, nuevo_camino))
     
     return None # si no se encuentra camino 
+
+def mostrar_camino(ciudad, camino, entrada, salida, inicio, destino, ruta):
+    ciudad_con_camino = [fila[:] for fila in ciudad] # copia para no dañar el original
+    
+    for fila, columna in camino:
+        if (fila, columna) == entrada:  
+            ciudad_con_camino[fila][columna] = inicio
+        elif (fila, columna) == salida:  
+            ciudad_con_camino[fila][columna] = destino
+        else: 
+            ciudad_con_camino[fila][columna] = ruta
