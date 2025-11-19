@@ -39,3 +39,18 @@ def encontrar_camino(entrada, salida, posicion_edificio, posicion_agua, posicion
     
     cola = deque([(entrada, [entrada])])
     visitados = {entrada}
+
+    while cola:
+        posicion_actual, camino_actual = cola.popleft()
+        vecinos = movimientos_validos(posicion_actual, posicion_edificio, posicion_agua, posicion_obstaculo_opcional, dimension, ciudad)
+        
+        for vecino in vecinos:
+            if vecino == salida:
+                return camino_actual + [vecino]
+            
+            if vecino not in visitados:
+                visitados.add(vecino)
+                nuevo_camino = camino_actual + [vecino]
+                cola.append((vecino, nuevo_camino))
+    
+    return None # si no se encuentra camino 
