@@ -65,3 +65,6 @@ def mostrar_camino(ciudad, camino, entrada, salida, inicio, destino, ruta):
             ciudad_con_camino[fila][columna] = destino
         else: 
             ciudad_con_camino[fila][columna] = ruta
+
+        for fila in ciudad_con_camino:
+            print(" ".join(fila))
