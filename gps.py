@@ -137,3 +137,6 @@ def inicio_gps():
 
     mapa_ciudad[fila_entrada][columna_entrada] = inicio
     mapa_ciudad[fila_salida][columna_salida] = destino
+
+    obstaculo_opcional = []
+    camino = encontrar_camino(entrada, salida, edificio, agua, obstaculo_opcional, dimension, mapa_ciudad)
