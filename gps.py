@@ -157,5 +157,12 @@ def inicio_gps():
                 fila_obstaculo = int(input("Dime la fila del obstaculo: "))
                 columna_obstaculo = int(input("Dime la columna del obstaculo: "))
                 obstaculo_agregado = (fila_obstaculo, columna_obstaculo)
+
+                if not (0 <= fila_obstaculo < dimension and 0 <= columna_obstaculo < dimension):
+                    print(f"Esta posicion no es valida ya que esta fuera de la ciudad {fila_obstaculo, columna_obstaculo}")
+                elif obstaculo_agregado == entrada or obstaculo_agregado == salida:
+                    print(f"No se puede agregar obstaculo ya que esta en el punto de Partida/Llegada ({fila_obstaculo, columna_obstaculo})")
+                elif mapa_ciudad[fila_obstaculo][columna_obstaculo] == edificio:
+                    print(f"No se puede agregar aqui ya que es un Edificio {fila_obstaculo, columna_obstaculo}")
         except ValueError:
             print("Favor solo ingrese numeros")
