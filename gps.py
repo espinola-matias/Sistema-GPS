@@ -134,3 +134,6 @@ def inicio_gps():
 
         except ValueError:
             print("Favor solo ingrese numeros")
+
+    mapa_ciudad[fila_entrada][columna_entrada] = inicio
+    mapa_ciudad[fila_salida][columna_salida] = destino
